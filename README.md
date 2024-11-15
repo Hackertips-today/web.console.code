@@ -18,7 +18,7 @@
 
 > **Hacker Tips Repository**
 >  _Sharpen your skills and uncover essential insights with our curated tips for ethical hacking, cyber defense, and penetration testing!_
-
+>  _Check back often for more ethical hacking tips, tricks and 0day infoz
 ---
 
 
