@@ -7,9 +7,8 @@ Exploit the web via the inspect / runtime
 # Response Headers (initiating from non Google server):
 ## Redirect 1
 ## URL: https://cloud.com
-### ├── 0: HTTP/1.1 200 OK
-├── Date: Fri, 15 Nov 2024 02:39:49 GMT
-├── Content-Type: text/html
+#### ├── 0: HTTP/1.1 200 OK#### ├── Date: Fri, 15 Nov 2024 02:39:49 GMT
+#### ├── Content-Type: text/html
 ├── Transfer-Encoding: chunked  # Try req smuggling
 ├── Connection: close    # Try to force this to keep-alive
 ├── CF-Ray: 8e2bdf7d3d6a2aa0-LAX  # Cloudflare specific  
