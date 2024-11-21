@@ -21,6 +21,18 @@
 >  _Check back often for more ethical hacking tips, tricks and 0day infoz
 ---
 
+- c
+  navigator.storage.estimate().then(estimate => {
+    let percentageUsed = (estimate.usage / estimate.quota) * 100;
+    console.log(`You have used ${percentageUsed.toFixed(2)}% of your storage quota.`);
+    
+    if (percentageUsed > 90) {
+        console.warn("You are nearing your storage quota. Consider freeing up space.");
+    }
+});
+
+
+
 
 
 # webExploit
