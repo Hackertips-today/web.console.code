@@ -46,10 +46,10 @@ Exploit the web via the inspect / runtime
 ## URL: https://cloud.com
 #### ├── 0: HTTP/1.1 200 OK#### ├── Date: Fri, 15 Nov 2024 02:39:49 GMT
 #### ├── Content-Type: text/html
-├── Transfer-Encoding: chunked  # Try req smuggling
-├── Connection: close    # Try to force this to keep-alive
-├── CF-Ray: 8e2bdf7d3d6a2aa0-LAX  # Cloudflare specific  
-├── CF-Cache-Status: DYNAMIC      # Cloudflare specific
+# ├── Transfer-Encoding: chunked  # Try req smuggling
+# ├── Connection: close    # Try to force this to keep-alive
+# ├── CF-Ray: 8e2bdf7d3d6a2aa0-LAX  # Cloudflare specific  
+# ├── CF-Cache-Status: DYNAMIC      # Cloudflare specific
 ├── Cache-Control: public, max-age=60
 ├── ETag: W/"9298295a26cd0bb92c17fec484a72b20"
 ├── Expires: Fri, 15 Nov 2024 02:40:49 GMT
