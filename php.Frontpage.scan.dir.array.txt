@@ -1,0 +1,45 @@
+## This is a somewhat comphrensive list of the possible files you'd find in an outdated Frontpage webroot.
+## Modify this code - perhaps using curl/curlopts and a foreach statement to first check and see if the main path exists
+## if it doesnt return 4xx then attempt to hit each file and first look for a non 4xx response
+## these files may contain juicy info
+
+<?php
+$vti_directories = [
+    '_vti_bin' => [
+        'author.exe', // Handles authoring requests
+        'author.dll', // Handles authoring requests (DLL version)
+        'admin.exe',  // Handles administrative requests
+        'admin.dll',  // Handles administrative requests (DLL version)
+        'shtml.exe',  // Handles server-side includes for FrontPage
+        'shtml.dll',  // Handles server-side includes (DLL version)
+        'fpcount.exe', // FrontPage hit counter
+        'fpcount.dll', // FrontPage hit counter (DLL version)
+        'service.lck', // Lock file for preventing multiple changes
+    ],
+    '_vti_cnf' => [
+        'file.htm',  // Metadata files for corresponding content files
+        'index.html', // Metadata for index.html
+        'page1.html', // Metadata for page1.html
+        'config.lck', // Lock file for configuration changes
+    ],
+    '_vti_pvt' => [
+        'service.cnf', // Configuration file for server extensions
+        'botinfs.cnf', // Bot information file
+        'service.lck', // Lock file for preventing simultaneous changes
+        'access.cnf',  // Permissions and access control file
+        'linkinfo.cnf', // Information about hyperlinks
+        'services.cnf', // List of services enabled
+        'frontpg.lck', // Lock file used by FrontPage
+        'vti_text.cnf', // Text content metadata
+        'users.lck',   // Lock file for user settings
+    ],
+    '_vti_log' => [
+        'service.log', // Server activity log
+        'author.log',  // Authoring activity log
+        'admin.log',   // Administrative activity log
+        'error.log',   // Error logs
+        'access.log',  // Access logs
+    ],
+];
+?>
+
