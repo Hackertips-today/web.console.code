@@ -15,7 +15,7 @@ const SearchVal = "google_tag_manager"; // Change this to any global object name
 
     // Enumerate all properties
     const properties = Object.getOwnPropertyNames(targetObject);
-    console.log(`📌 Found properties in '${SearchVal}':`, properties);
+    console.log(`[*] Found properties in '${SearchVal}':`, properties);
 
     // Identify functions inside the object
     const functions = properties.filter(prop => typeof targetObject[prop] === 'function');
