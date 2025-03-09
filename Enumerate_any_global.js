@@ -4,11 +4,11 @@ const SearchVal = "google_tag_manager"; // Change this to any global object name
 
 (function analyzeObject() {
     if (typeof window[SearchVal] === 'undefined') {
-        console.warn(`❌ '${SearchVal}' object not found in this context.`);
+        console.warn(`[*] '${SearchVal}' object not found in this context.`);
         return;
     }
 
-    console.group(`🔍 Analyzing '${SearchVal}' Object Structure`);
+    console.group(`[-] Analyzing '${SearchVal}' Object Structure`);
 
     // Reference the target object
     const targetObject = window[SearchVal];
@@ -23,18 +23,18 @@ const SearchVal = "google_tag_manager"; // Change this to any global object name
 
     // Check for objects inside the target object
     const objects = properties.filter(prop => typeof targetObject[prop] === 'object' && targetObject[prop] !== null);
-    console.log("📂 Nested Objects:", objects);
+    console.log("[+] Nested Objects:", objects);
 
     // Identify writable properties (potential for injection)
     const writableProps = properties.filter(prop => {
         let desc = Object.getOwnPropertyDescriptor(targetObject, prop);
         return desc && desc.writable && typeof targetObject[prop] === 'function';
     });
-    console.log("⚠️ Writable Properties (Potential Injection Targets):", writableProps);
+    console.log("[-] Writable Properties (Potential Injection Targets):", writableProps);
 
     // Look for 'IV' (Initialization Vectors, security-related properties)
     const ivMatches = properties.filter(prop => prop.toLowerCase().includes("iv"));
-    console.log("🔑 Potential IV-related properties:", ivMatches);
+    console.log("[!] Potential IV-related properties:", ivMatches);
 
     // Detect prototype pollution possibilities
     console.group("[-] Checking for Prototype Pollution Vectors");
